@@ -29,5 +29,3 @@ vars:
   segment: "{{var('schema')}}.list_segments"
   segment_member: "{{var('schema')}}.list_segment_members"
   unsubscribe: "{{var('schema')}}.unsubscribes"
-  using_automations: True
-  using_segments: True

@@ -1,4 +1,3 @@
-{{ config(enabled=var('using_segments', True)) }}
 {{ config(materialized='table') }}
 
 with base as (
