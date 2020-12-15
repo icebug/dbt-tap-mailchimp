@@ -1,0 +1,33 @@
+config-version: 2
+
+name: 'tap_mailchimp'
+version: '0.0.1'
+
+require-dbt-version: [">=0.18.0", "<0.19.0"]
+
+source-paths: ["models"]   # paths with source code to compile
+analysis-paths: ["analysis"] # path with analysis files which are compiled, but not run
+target-path: "target"      # path for compiled code
+clean-targets: ["target"]  # directories removed by the clean task
+test-paths: ["test"]       # where to store test results
+data-paths: ["data"]       # load CSVs from this directory with `dbt seed`
+
+
+models:
+  mailchimp:
+    base:
+      materialized: table
+
+
+vars:
+  mailchimp_schema: "tap_mailchimp"
+  automation: "{{var('schema')}}.automations"
+  campaign: "{{var('schema')}}.campaigns"
+  email_activity: "{{var('schema')}}.reports_email_activity"
+  list_member: "{{var('schema')}}.list_members"
+  list: "{{var('schema')}}.lists"
+  segment: "{{var('schema')}}.list_segments"
+  segment_member: "{{var('schema')}}.list_segment_members"
+  unsubscribe: "{{var('schema')}}.unsubscribes"
+  using_automations: True
+  using_segments: True
