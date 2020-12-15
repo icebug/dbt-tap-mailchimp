@@ -1,4 +1,5 @@
 {{ config(enabled=var('using_automations', True)) }}
+{{ config(materialized='table') }}
 
 with base as (
 
