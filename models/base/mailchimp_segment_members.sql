@@ -32,7 +32,9 @@ with base as (
         location.gmtoff as gmtoff,
         location.dstoff as dstoff,
         location.country_code as country_code,
-        location.timezone as timezone
+        location.timezone as timezone,
+
+        report_date
 
     from base
 

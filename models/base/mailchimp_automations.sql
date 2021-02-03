@@ -51,7 +51,9 @@ with base as (
         report_summary.open_rate as open_rate,
         report_summary.clicks as clicks,
         report_summary.subscriber_clicks as subscriber_clicks,
-        report_summary.click_rate as click_rate
+        report_summary.click_rate as click_rate,
+
+        report_date
 
     from base
 

@@ -16,11 +16,14 @@ with base as (
         member_count,
 
         updated_at as updated_timestamp,
-        created_at as created_timestamp
+        created_at as created_timestamp,
+
+        report_date,
+        ROW_NUMBER() OVER (PARTITION BY id ORDER BY report_date DESC) AS rn
     from base
 
 )
 
 select *
 from fields
-
+where rn = 1

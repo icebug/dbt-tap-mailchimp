@@ -28,4 +28,3 @@ vars:
   list: "{{var('schema')}}.lists"
   segment: "{{var('schema')}}.list_segments"
   segment_member: "{{var('schema')}}.list_segment_members"
-  unsubscribe: "{{var('schema')}}.unsubscribes"

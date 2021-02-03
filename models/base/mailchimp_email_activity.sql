@@ -17,7 +17,8 @@ with base as (
         type,
         timestamp,
         ip,
-        url
+        url,
+        report_date
 
     from base
 

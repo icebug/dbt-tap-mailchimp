@@ -68,7 +68,9 @@ with base as (
         report_summary.ecommerce.total_orders as total_orders,
         report_summary.ecommerce.total_spent as total_spend,
         report_summary.ecommerce.total_revenue as total_revenue,
-        delivery_status.enabled as delivery_status_enabled
+        delivery_status.enabled as delivery_status_enabled,
+
+        report_date
 
     from base
 

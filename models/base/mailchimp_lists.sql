@@ -55,7 +55,10 @@ with base as (
         stats.open_rate as open_rate,
         stats.click_rate as click_rate,
         stats.last_sub_date as last_subscribe_date,
-        stats.last_unsub_date as last_unsubscribe_date
+        stats.last_unsub_date as last_unsubscribe_date,
+
+        report_date,
+        ROW_NUMBER() OVER (PARTITION BY id ORDER BY report_date DESC) AS rn
 
     from base
 
@@ -63,4 +66,4 @@ with base as (
 
 select *
 from fields
-
+where rn = 1
